@@ -5,12 +5,11 @@
   <title>Road Trip 2021</title>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
   <link rel="stylesheet" href="styling.scss"/>
-
   <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
   
   <style>
-  #map{ width: 900px; height: 500px; }
+  #map{ width: 60%; height: 80%; }
   </style>
 </head>
 
@@ -18,109 +17,87 @@
   <div id="map"></div>
 
 <script type="module">
-    import { locations } from '../js/locations2.js';
+    import { locations } from './assets/locations.js';
     console.log(locations);
 
-    const LOCATION = {
-    lat: 38.9072,
-    lng: -77.0369,
-    };
-    const CENTER = [LOCATION.lat, LOCATION.lng];
-    const DEFAULT_ZOOM = 2;
-    const ZOOM = 10;
-
   // initialize the map
-  var map = L.map('map').setView([42.35, -71.08], 13);
+  var map = L.map('map').setView([42.35, -71.08], 3);
 
   // load a tile layer
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
-      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-     // maxZoom: 17,
-      //minZoom: 9
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    const tripPoints = createTripPointsGeoJson({ locations });
+ //   const tripPoints = createTripPointsGeoJson({ locations });
+    const tripPoints = $.getJSON("./assets/tripPoints.geojson",function(data){
+      
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
     console.log("Trip Points", tripPoints)
-    const tripLines = createTripLinesGeoJson({ locations });
+   
+   // const tripLines = createTripLinesGeoJson({ locations });
+   const tripLines = $.getJSON("./assets/tripLines.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });    console.log("Trip Lines", tripPoints)
 
+
+    // create "pins" and lines from destination A to B
     const tripPointsGeoJsonLayers = new L.geoJson(tripPoints, {
        pointToLayer: tripStopPointToLayer
      });
-
      const tripLinesGeoJsonLayers = new L.geoJson(tripLines);
 
+    // draw pins and lines on map
     tripPointsGeoJsonLayers.addTo(map);
     tripLinesGeoJsonLayers.addTo(map);
 
-    const bounds = tripPointsGeoJsonLayers.getBounds();
+    //const bounds = tripPointsGeoJsonLayers.getBounds();
+   // map.fitBounds(bounds);
 
-    map.fitBounds(bounds);
 
+  // load GeoJSON from an external file
+  
 
-/**
- * tripStopPointToLayer
- */
-
- function createTripPointsGeoJson({ locations } = {}) {
-  return {
-    "type": "FeatureCollection",
-    "features": locations.map(({ placename, location = {}, image, date, todo = [] } = {}) => {
-      const { lat, lng } = location;
-      return {
-        "type": "Feature",
-        "properties": {
+  /**
+   * createTripLinesGeoJson
+   */
+  
+   function createTripLinesGeoJson({ locations } = {}) {
+    return {
+      "type": "FeatureCollection",
+      "features": locations.map((stop = {}, index) => {
+        const prevStop = locations[index - 1];
+  
+        if ( !prevStop ) return [];
+  
+        const { placename, location = {}, date, todo = [] } = stop;
+        const { lat, lng } = location;
+        const properties = {
           placename,
           todo,
-          date,
-          image
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [ lng, lat ]
+          date
+        };
+  
+        const { location: prevLocation = {} } = prevStop;
+        const { lat: prevLat, lng: prevLng } = prevLocation;
+  
+        return {
+          type: 'Feature',
+          properties,
+          geometry: {
+            type: 'LineString',
+            coordinates: [
+              [ prevLng, prevLat ],
+              [ lng, lat ]
+            ]
+          }
         }
-      }
-    })
+      })
+    }
   }
-}
-
-/**
- * tripStopPointToLayer
- */
-
-function createTripLinesGeoJson({ locations } = {}) {
-  return {
-    "type": "FeatureCollection",
-    "features": locations.map((stop = {}, index) => {
-      const prevStop = locations[index - 1];
-
-      if ( !prevStop ) return [];
-
-      const { placename, location = {}, date, todo = [] } = stop;
-      const { lat, lng } = location;
-      const properties = {
-        placename,
-        todo,
-        date
-      };
-
-      const { location: prevLocation = {} } = prevStop;
-      const { lat: prevLat, lng: prevLng } = prevLocation;
-
-      return {
-        type: 'Feature',
-        properties,
-        geometry: {
-          type: 'LineString',
-          coordinates: [
-            [ prevLng, prevLat ],
-            [ lng, lat ]
-          ]
-        }
-      }
-    })
-  }
-}
 
 /**
  * tripStopPointToLayer
@@ -170,6 +147,8 @@ function tripStopPointToLayer( feature = {}, latlng ) {
     //   iconSize: 20
     // }),
     icon: L.icon({
+    className: 'icon',
+    html: `<span class="icon-trip-stop"></span>`,
     iconUrl: 'lyft-car.png',
     iconSize: [50,40]
   }),

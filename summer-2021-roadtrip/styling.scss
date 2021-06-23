@@ -9,55 +9,6 @@
       padding: 0;
     }
   
-    .popup-gatsby {
-      display: flex;
-      width: 36em;
-      padding: 1em;
-      border-radius: 1em;
-    }
-  
-    .popup-gatsby-image {
-      display: flex;
-      align-items: center;
-      margin-right: 2em;
-    }
-  
-    .popup-gatsby-content {
-  
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-direction: column;
-      align-content: center;
-      text-align: left;
-      padding-right: 1em;
-  
-      h1 {
-        margin: 0 0 .2em;
-      }
-      p {
-        margin: 0 0 .5em;
-      }
-  
-    }
-  
-    .gatsby-astronaut {
-  
-      overflow: hidden;
-      width: 10em;
-      height: 10em;
-      background-color: $gatsby-purple;
-      border-radius: 100%;
-      border: solid 6px $gatsby-purple;
-      margin: 0;
-  
-      img {
-        width: 100%;
-        height: auto;
-      }
-  
-    }
-  
   }
   
   .home-start {
@@ -102,7 +53,7 @@
     }
   
     .trip-stop-date {
-      color: $grey-600;
+      color: rgba(218, 21, 21, 1);
       font-size: 1em;
     }
   
@@ -117,8 +68,8 @@
     display: block;
     float: left;
     overflow: hidden;
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     text-indent: 100%;
     color: transparent;
     background-position: center;
@@ -136,12 +87,12 @@
     display: block;
     width: 1.5em;
     height: 1.5em;
-    background-color: $orange-500;
+    background-color: orange-500;
     border-radius: 100%;
     box-shadow: 0 2px 5px rgba(0,0,0,.5);
   
     &:hover {
-      background-color: $deep-orange-400;
+      background-image: url('placeholder.gif');      
     }
   
   }

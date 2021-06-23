@@ -1,0 +1,293 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Cheshire, CT",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 2, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.900658,
+            41.4989861
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Cleveland, Ohio",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 3, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.6934446,
+            41.5051613
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Chicago, Illinois",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 4, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6244212,
+            41.8755616
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Chicago, Illinois",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 5, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6244212,
+            41.8755616
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Des Moines, Iowa",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 6, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.6046655,
+            41.5910323
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Kansas City, Missouri",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 7, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -94.5781416,
+            39.100105
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Hayes, Kansas",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 8, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -94.692127,
+            38.909623
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Denver, Colorado",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 9, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.9848623,
+            39.7392364
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Denver, Colorado",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 10, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.9848623,
+            39.7392364
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Grand Junction, Colorado",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 11, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -108.5507317,
+            39.063956
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Salt Lake City, Utah",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 12, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.8867975,
+            40.7596198
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Battle Mountain, Nevada",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 13, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -116.9384789,
+            40.6418373
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Reno, Nevada",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 14, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.81631051527071,
+            39.5442688
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Reno, Nevada",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 15, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.81631051527071,
+            39.5442688
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Berkeley, California",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 16, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.23963364918777,
+            37.8753497
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "placename": "Berkeley, California",
+          "todo": [
+            "We are currently figuring out what to do lol"
+          ],
+          "date": "July 17, 2021",
+          "image": "placeholder.gif"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.23963364918777,
+            37.8753497
+          ]
+        }
+      }
+    ]
+  }

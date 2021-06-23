@@ -1,0 +1,71 @@
+.page-home .map, .page-home .map-base {
+    height: 50vh;
+  }
+  .page-home main {
+    padding: 0;
+  }
+  .home-start {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  .home-start h2 {
+    margin-top: 0;
+  }
+  .home-start p {
+    margin-bottom: 1.2em;
+  }
+  .home-start pre {
+    margin-bottom: 1.5em;
+  }
+  .trip-stop {
+    width: 400px;
+    overflow: hidden;
+  }
+  .trip-stop h2 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+  }
+  .trip-stop p, .trip-stop ul, .trip-stop h3 {
+    font-size: 1.2em;
+    font-weight: normal;
+  }
+  .trip-stop p {
+    margin: 0.2em 0;
+  }
+  .trip-stop .trip-stop-date {
+    color: #2915da;
+    font-size: 1em;
+  }
+  .trip-stop ul {
+    padding: 0 0 0 1.4em;
+    margin: 0;
+  }
+  .trip-stop-image {
+    display: block;
+    float: left;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    text-indent: 100%;
+    color: transparent;
+    background-position: center;
+    background-size: cover;
+  }
+  .trip-stop-content {
+    float: left;
+    width: 250px;
+    padding-left: 1em;
+  }
+  .icon-trip-stop {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: orange-500;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  .icon-trip-stop:hover {
+    background-image: url('placeholder.gif');
+  }
+  
