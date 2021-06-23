@@ -31,19 +31,15 @@
 
  //   const tripPoints = createTripPointsGeoJson({ locations });
     const tripPoints = $.getJSON("./assets/tripPoints.geojson",function(data){
-      
     // add GeoJSON layer to the map once the file is loaded
     L.geoJson(data).addTo(map);
   });
     console.log("Trip Points", tripPoints)
    
-   // const tripLines = createTripLinesGeoJson({ locations });
-   const tripLines = $.getJSON("./assets/tripLines.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-  });    console.log("Trip Lines", tripPoints)
+    const tripLines = createTripLinesGeoJson({ locations });
+    console.log("Trip Lines", tripPoints)
 
-
+/*
     // create "pins" and lines from destination A to B
     const tripPointsGeoJsonLayers = new L.geoJson(tripPoints, {
        pointToLayer: tripStopPointToLayer
@@ -53,7 +49,7 @@
     // draw pins and lines on map
     tripPointsGeoJsonLayers.addTo(map);
     tripLinesGeoJsonLayers.addTo(map);
-
+*/
     //const bounds = tripPointsGeoJsonLayers.getBounds();
    // map.fitBounds(bounds);
 
@@ -65,7 +61,7 @@
    * createTripLinesGeoJson
    */
   
-   function createTripLinesGeoJson({ locations } = {}) {
+function createTripLinesGeoJson({ locations } = {}) {
     return {
       "type": "FeatureCollection",
       "features": locations.map((stop = {}, index) => {
