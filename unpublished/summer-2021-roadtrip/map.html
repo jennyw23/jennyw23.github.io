@@ -20,8 +20,16 @@
     import { locations } from './assets/locations.js';
     console.log(locations);
 
-  // initialize the map
-  var map = L.map('map').setView([42.35, -71.08], 3);
+   /*  const LOCATION = {
+    lat: 38.9072,
+    lng: -77.0369,
+    };
+    const CENTER = [LOCATION.lat, LOCATION.lng];
+    const DEFAULT_ZOOM = 2;
+    const ZOOM = 10;
+ */
+  // initialize the map to Cheshire, CT is something fails... it should pull up the whole USA
+  var map = L.map('map').setView([41.5108, -72.9052], 13);
 
   // load a tile layer
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -29,17 +37,11 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
- //   const tripPoints = createTripPointsGeoJson({ locations });
-    const tripPoints = $.getJSON("./assets/tripPoints.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-  });
+    const tripPoints = createTripPointsGeoJson({ locations });
     console.log("Trip Points", tripPoints)
    
     const tripLines = createTripLinesGeoJson({ locations });
-    console.log("Trip Lines", tripPoints)
 
-/*
     // create "pins" and lines from destination A to B
     const tripPointsGeoJsonLayers = new L.geoJson(tripPoints, {
        pointToLayer: tripStopPointToLayer
@@ -49,51 +51,74 @@
     // draw pins and lines on map
     tripPointsGeoJsonLayers.addTo(map);
     tripLinesGeoJsonLayers.addTo(map);
-*/
-    //const bounds = tripPointsGeoJsonLayers.getBounds();
-   // map.fitBounds(bounds);
+
+    const bounds = tripPointsGeoJsonLayers.getBounds();
+    map.fitBounds(bounds);
 
 
-  // load GeoJSON from an external file
-  
+/**
+ * createTripPointsGeoJson
+ */
 
-  /**
-   * createTripLinesGeoJson
-   */
-  
-function createTripLinesGeoJson({ locations } = {}) {
-    return {
-      "type": "FeatureCollection",
-      "features": locations.map((stop = {}, index) => {
-        const prevStop = locations[index - 1];
-  
-        if ( !prevStop ) return [];
-  
-        const { placename, location = {}, date, todo = [] } = stop;
-        const { lat, lng } = location;
-        const properties = {
+ function createTripPointsGeoJson({ locations } = {}) {
+  return {
+    "type": "FeatureCollection",
+    "features": locations.map(({ placename, location = {}, image, date, todo = [] } = {}) => {
+      const { lat, lng } = location;
+      return {
+        "type": "Feature",
+        "properties": {
           placename,
           todo,
-          date
-        };
-  
-        const { location: prevLocation = {} } = prevStop;
-        const { lat: prevLat, lng: prevLng } = prevLocation;
-  
-        return {
-          type: 'Feature',
-          properties,
-          geometry: {
-            type: 'LineString',
-            coordinates: [
-              [ prevLng, prevLat ],
-              [ lng, lat ]
-            ]
-          }
+          date,
+          image
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ lng, lat ]
         }
-      })
-    }
+      }
+    })
   }
+}
+
+/**
+ * createTripLinesGeoJson
+ */
+
+function createTripLinesGeoJson({ locations } = {}) {
+  return {
+    "type": "FeatureCollection",
+    "features": locations.map((stop = {}, index) => {
+      const prevStop = locations[index - 1];
+
+      if ( !prevStop ) return [];
+
+      const { placename, location = {}, date, todo = [] } = stop;
+      const { lat, lng } = location;
+      const properties = {
+        placename,
+        todo,
+        date
+      };
+
+      const { location: prevLocation = {} } = prevStop;
+      const { lat: prevLat, lng: prevLng } = prevLocation;
+
+      return {
+        type: 'Feature',
+        properties,
+        geometry: {
+          type: 'LineString',
+          coordinates: [
+            [ prevLng, prevLat ],
+            [ lng, lat ]
+          ]
+        }
+      }
+    })
+  }
+}
 
 /**
  * tripStopPointToLayer
@@ -145,7 +170,7 @@ function tripStopPointToLayer( feature = {}, latlng ) {
     icon: L.icon({
     className: 'icon',
     html: `<span class="icon-trip-stop"></span>`,
-    iconUrl: 'lyft-car.png',
+    iconUrl: './assets/lyft-car.png',
     iconSize: [50,40]
   }),
 

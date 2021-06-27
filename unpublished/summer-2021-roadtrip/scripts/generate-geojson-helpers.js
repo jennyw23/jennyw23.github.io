@@ -1,4 +1,4 @@
-const { locations } = require('./locations');
+const { locations } = require('../assets/locations');
 
 const tripPoints = createTripPointsGeoJson({ locations });
 console.log("Trip Points", tripPoints)

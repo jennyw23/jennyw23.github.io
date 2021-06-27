@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title> Jenny Wang</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+
+
+    <!-- Styles and rules for the travel map!!!! -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="../assets/css/map-style.css" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+    <style>
+    #map{ width: 100%; height: 500px; }
+    </style>
+
+  </head>
+  <body class="landing is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <h1><a href="index.html">Jenny Wang</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="projects.html">Projects</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="#cta" class="more scrolly">Contact</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Banner -->
+      <section id="banner">
+        <div class="inner">
+          <h2>Summer 2021</h2>
+          <p>
+            Where am I right now? <br />
+          </p>
+          <ul class="actions special">
+            <li><a href="#three" target="_blank" class="button">Photos</a></li>
+          </ul>
+        </div>
+        <a href="#three" class="more scrolly">Learn More</a>
+      </section>
+
+     
+      <!-- Three -->
+      <section id="three" class="wrapper style1 special">
+        <div class="inner">
+          <header class="major">
+            <h2>Road Trip Map</h2>
+            <p style="font-size: smaller;">
+              This map was built using Javascript, HTML/CSS, and the Leaflet open-source library. I had to make a few
+              tweaks to fit it on this webpage, so it's not the cleanest code ☹. Regardless, I hope 
+              this map gives you a better idea of what I want to get out of this trip!
+            </p>
+          </header>
+
+          <div id="map"></div>
+          <script type="module">
+              export const locations = [
+              {
+              placename: "Cheshire, CT",
+              date: "July 2, 2021",
+              image: "images/placeholder.gif",
+              location: { lat: 41.4989861, lng: -72.900658 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Cleveland, Ohio",
+              date: "July 3, 2021",
+              image: "placeholder.gif",
+              location: { lat: 41.5051613, lng: -81.6934446 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Chicago, Illinois",
+              date: "July 4, 2021",
+              image: "placeholder.gif",
+              location: { lat: 41.8755616, lng: -87.6244212 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Chicago, Illinois",
+              date: "July 5, 2021",
+              image: "placeholder.gif",
+              location: { lat: 41.8755616, lng: -87.6244212 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Des Moines, Iowa",
+              date: "July 6, 2021",
+              image: "placeholder.gif",
+              location: { lat: 41.5910323, lng: -93.6046655 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Kansas City, Missouri",
+              date: "July 7, 2021",
+              image: "placeholder.gif",
+              location: { lat: 39.100105, lng: -94.5781416 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Hayes, Kansas",
+              date: "July 8, 2021",
+              image: "placeholder.gif",
+              location: { lat: 38.909623, lng: -94.692127 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Denver, Colorado",
+              date: "July 9, 2021",
+              image: "placeholder.gif",
+              location: { lat: 39.7392364, lng: -104.9848623 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Denver, Colorado",
+              date: "July 10, 2021",
+              image: "placeholder.gif",
+              location: { lat: 39.7392364, lng: -104.9848623 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Grand Junction, Colorado",
+              date: "July 11, 2021",
+              image: "placeholder.gif",
+              location: { lat: 39.063956, lng: -108.5507317 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Salt Lake City, Utah",
+              date: "July 12, 2021",
+              image: "placeholder.gif",
+              location: { lat: 40.7596198, lng: -111.8867975 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Battle Mountain, Nevada",
+              date: "July 13, 2021",
+              image: "placeholder.gif",
+              location: { lat: 40.6418373, lng: -116.9384789 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Reno, Nevada",
+              date: "July 14, 2021",
+              image: "placeholder.gif",
+              location: { lat: 39.5442688, lng: -119.81631051527071 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Reno, Nevada",
+              date: "July 15, 2021",
+              image: "placeholder.gif",
+              location: { lat: 39.5442688, lng: -119.81631051527071 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Berkeley, California",
+              date: "July 16, 2021",
+              image: "placeholder.gif",
+              location: { lat: 37.8753497, lng: -122.23963364918777 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+            {
+              placename: "Berkeley, California",
+              date: "July 17, 2021",
+              image: "placeholder.gif",
+              location: { lat: 37.8753497, lng: -122.23963364918777 },
+              todo: ["We are currently figuring out what to do lol"],
+            },
+          ];
+
+            // initialize the map
+            var map = L.map('map').setView([42.35, -71.08], 13);
+          
+            // load a tile layer
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
+          
+              const tripPoints = createTripPointsGeoJson({ locations });
+              console.log("Trip Points", tripPoints)
+             
+              const tripLines = createTripLinesGeoJson({ locations });
+          
+              // create "pins" and lines from destination A to B
+              const tripPointsGeoJsonLayers = new L.geoJson(tripPoints, {
+                 pointToLayer: tripStopPointToLayer
+               });
+               const tripLinesGeoJsonLayers = new L.geoJson(tripLines);
+          
+              // draw pins and lines on map
+              tripPointsGeoJsonLayers.addTo(map);
+              tripLinesGeoJsonLayers.addTo(map);
+          
+              const bounds = tripPointsGeoJsonLayers.getBounds();
+              map.fitBounds(bounds);
+          
+          
+          /**
+           * createTripPointsGeoJson
+           */
+          
+           function createTripPointsGeoJson({ locations } = {}) {
+            return {
+              "type": "FeatureCollection",
+              "features": locations.map(({ placename, location = {}, image, date, todo = [] } = {}) => {
+                const { lat, lng } = location;
+                return {
+                  "type": "Feature",
+                  "properties": {
+                    placename,
+                    todo,
+                    date,
+                    image
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [ lng, lat ]
+                  }
+                }
+              })
+            }
+          }
+          
+          /**
+           * createTripLinesGeoJson
+           */
+          
+          function createTripLinesGeoJson({ locations } = {}) {
+            return {
+              "type": "FeatureCollection",
+              "features": locations.map((stop = {}, index) => {
+                const prevStop = locations[index - 1];
+          
+                if ( !prevStop ) return [];
+          
+                const { placename, location = {}, date, todo = [] } = stop;
+                const { lat, lng } = location;
+                const properties = {
+                  placename,
+                  todo,
+                  date
+                };
+          
+                const { location: prevLocation = {} } = prevStop;
+                const { lat: prevLat, lng: prevLng } = prevLocation;
+          
+                return {
+                  type: 'Feature',
+                  properties,
+                  geometry: {
+                    type: 'LineString',
+                    coordinates: [
+                      [ prevLng, prevLat ],
+                      [ lng, lat ]
+                    ]
+                  }
+                }
+              })
+            }
+          }
+          
+          /**
+           * tripStopPointToLayer
+           */
+          
+          function tripStopPointToLayer( feature = {}, latlng ) {
+            const { properties = {} } = feature;
+            const { placename, todo = [], image, date } = properties;
+          
+            const list = todo.map(what => `<li>${ what }</li>`);
+            let listString = '';
+            let imageString = '';
+          
+            if ( Array.isArray(list) && list.length > 0 ) {
+              listString = list.join('');
+              listString = `
+                <p>Things we will or have done...</p>
+                <ul>${listString}</ul>
+              `
+            }
+          
+            if ( image ) {
+              imageString = `
+                <span class="trip-stop-image" style="background-image: url(${image})">${placename}</span>
+              `;
+            }
+          
+            const text = `
+              <div class="trip-stop">
+                ${ imageString }
+                <div class="trip-stop-content">
+                  <h2>${placename}</h2>
+                  <p class="trip-stop-date">${date}</p>
+                  ${ listString }
+                </div>
+              </div>
+            `;
+          
+            const popup = L.popup({
+              maxWidth: 400
+            }).setContent(text);
+          
+            const layer = L.marker( latlng, {
+              // icon: L.divIcon({
+              //   className: 'icon',
+              //   html: `<span class="icon-trip-stop"></span>`,
+              //   iconSize: 20
+              // }),
+              icon: L.icon({
+              iconUrl: './images/lyft-car.png',
+              iconSize: [50,40]
+            }),
+          
+              riseOnHover: true
+            }).bindPopup(popup);
+          
+            return layer;
+          }
+           
+            </script>
+
+
+
+
+
+
+<!-- Features that appear after the map-->
+
+          <ul class="features">
+            <li class="icon solid fa-home">
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Connecticut</h3></a>
+              <p>                
+                It was great catching up with friends at home this summer, but now it's time for cheesy photos and
+                new adventures traveling across the United States. If you've somehow found your way to this blog, feel 
+                free to follow along as I review my experiences from east to west ☺<br />
+              </p>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Ohio</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+               (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+               <span style="background-color: #052922; color:#00f0ff">Friday</span>
+              </p>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Illinois</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Saturday</span>
+                <span style="background-color: #052922; color:#76ddff">Sunday</span>
+              </p>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://docs.google.com/presentation/d/1gFoHRWE8pjg5YQ2aP3htUWq13veSPiZux8-2RModgb4/edit?usp=sharing" target="_blank"><h3>Iowa</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Monday</span>
+              </p>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://drive.google.com/file/d/1VGixodkw3QPk0Z7jV7sZg8dqdr-kWzxa/view?usp=sharing" target="_blank"><h3>Missouri</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Tuesday</span>
+              </p>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://www.youtube.com/watch?v=DykZEOV5wD4" target="_blank"><h3>Kansas</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Wednesday</span>
+                <span style="background-color: #052922; color:#76ddff">Thursday</span>
+
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://www.youtube.com/watch?v=DykZEOV5wD4" target="_blank"><h3>Colorado</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Friday</span>
+                <span style="background-color: #052922; color:#76ddff">Saturday</span>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://docs.google.com/presentation/d/1gFoHRWE8pjg5YQ2aP3htUWq13veSPiZux8-2RModgb4/edit?usp=sharing" target="_blank"><h3>Utah</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Sunday</span>
+              </p>
+            </li>
+            <li class="icon solid fa-car">
+              <a href="https://drive.google.com/file/d/1VGixodkw3QPk0Z7jV7sZg8dqdr-kWzxa/view?usp=sharing" target="_blank"><h3>Nevada</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Monday</span>
+                <span style="background-color: #052922; color:#76ddff">Tuesday</span>
+                <span style="background-color: #052922; color:#00ffcc">Wednesday</span>
+
+              </p>
+            </li>
+            <li class="icon solid fa-map-pin">
+              <a href="https://github.com/jennyw23/ambient" target="_blank" ><h3>California</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
+                <span style="background-color: #052922; color:#00f0ff">Thursday</span>
+              </p>
+            </li>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- Two -->
+      
+      <!-- Include highlights and main photo and blog about experiences in each individual state. Template copied from the blog page -->
+
+      <!--
+      <section id="two" class="wrapper alt style2">
+        <section class="spotlight">
+          <div class="image"><img src="images/scenic_images/assembly_lilypads.JPG" alt="" /></div>
+          <div class="content">
+            <h2>
+              What have I been working on? 
+              </h2>
+              <p>
+                This past year forced me to reflect on what impact I want to make during my lifetime. Most of my 
+                personal project ideas have come from thinking about how to improve societal inefficiencies—
+                <a href="https://github.com/jennyw23/ambient" target="_blank">how might crowdsourcing temperatures in shared spaces reduce our carbon footprint?</a>
+                —or issues I’d want to solve in my own life. Currently, I am working on an exciting new project at
+                <a href="https://www.lyft.com/careers/life-at-lyft" target="_blank"">🚗 Lyft</a>, and I can't wait to share more down the road.
+              </p>
+              <ul class="actions">
+                <li><a href="projects.html" class="button fit">Projects</a></li>
+              </ul>
+          </div>
+        </section>
+        <section class="spotlight">
+          <div class="image"><img src="images/scenic_images/pink_clouds.JPG" alt="" /></div>
+          <div class="content">
+            <h2>
+              What’s been on my mind lately?
+            </h2>
+            <p>
+              Surprisingly, the virtual environment helped me remember how much I enjoyed learning. Without much else to do, I relied on my 
+              classes to distract myself while at home during the fall semester. I also dug deeper into building my own projects and thinking about startup culture.
+              I hope this blog serves as a sounding board for my thoughts about technology, diversity, and life in general.
+            </p>
+            <ul class="actions">
+              <li><a href="blog.html" class="button fit">Blog</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="spotlight">
+          <div class="image"><img src="images/jenny_profile_caption.gif" alt="" /></div>
+          <div class="content">
+            <h2>
+              And <i>Who am I</i>? 
+              </h2>
+              <p>
+                I’m a rising junior at Wellesley College. I love to travel, cook new recipes, and 
+                stay active. I'm also a huge fan of sampling coffee beans from around the world. This summer, I'm interning at Lyft 
+                as a SWE Intern on the mobile development team. While working remotely 
+                from California, I hope to keep this site updated with my new experiences 
+                on the West Coast!
+              </p>
+              <ul class="actions">
+                <li><a href="#cta" class="button fit">Contact Me</a></li>
+              </ul>
+          </div>
+        </section>
+      </section>
+    -->
+
+      <!-- CTA -->
+      <section id="cta" class="wrapper style4">
+        <div class="inner">
+          <header>
+            <h2>Get in touch</h2>
+            <p>
+              My inbox is always open. If you have any questions or just want to
+              say hello, feel free to shoot me a message!
+            </p>
+          </header>
+          <ul class="actions stacked">
+            <li><a href="mailto: jw10@wellesley.edu" target="_blank" class="button fit primary">Say Hello</a></li>
+            <li><a href="https://www.linkedin.com/in/jennywang2023/" target="_blank" class="button fit">LinkedIn</a></li>
+          </ul>
+          </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li>
+            <a style="text-decoration:none" href="https://www.linkedin.com/in/jennywang2023/" target="_blank" class="fab fa-linkedin"  
+              ><span class="label"></span></a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/jennyw23/" target="_blank" class="icon brands fa-github"
+              ><span class="label">Github</span></a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/jenny.wang/" target="_blank" class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a href="mailto: jw10@wellesley.edu" target="_blank" class="icon solid fa-envelope"
+              ><span class="label">Email</span></a
+            >
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Jenny Wang 2021</li>
+          <li>Design: HTML5 UP</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
