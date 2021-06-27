@@ -84,15 +84,15 @@
               export const locations = [
               {
               placename: "Cheshire, CT",
-              date: "July 2, 2021",
-              image: "images/placeholder.gif",
+              date: "FRIDAY, JULY 2, 2021",
+              image: "images/spongebob-todolist.gif",
               location: { lat: 41.4989861, lng: -72.900658 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Pack car full of bags", "Get ready for a 9 hour drive to Cleveland"],
             },
             {
               placename: "Cleveland, Ohio",
               date: "July 3, 2021",
-              image: "placeholder.gif",
+              image: "images/to-do-list.gif",
               location: { lat: 41.5051613, lng: -81.6934446 },
               todo: ["We are currently figuring out what to do lol"],
             },
@@ -303,8 +303,10 @@
             if ( Array.isArray(list) && list.length > 0 ) {
               listString = list.join('');
               listString = `
-                <p>Things we will or have done...</p>
+              <div class="map-bubble">
+                <p><i>To-Do List:</i></p>
                 <ul>${listString}</ul>
+              </div>
               `
             }
           
@@ -318,7 +320,7 @@
               <div class="trip-stop">
                 ${ imageString }
                 <div class="trip-stop-content">
-                  <h2>${placename}</h2>
+                  <h2>"HELLO" ${placename}</h2>
                   <p class="trip-stop-date">${date}</p>
                   ${ listString }
                 </div>
@@ -330,11 +332,6 @@
             }).setContent(text);
           
             const layer = L.marker( latlng, {
-              // icon: L.divIcon({
-              //   className: 'icon',
-              //   html: `<span class="icon-trip-stop"></span>`,
-              //   iconSize: 20
-              // }),
               icon: L.icon({
               iconUrl: './images/lyft-car.png',
               iconSize: [50,40]

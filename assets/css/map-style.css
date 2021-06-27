@@ -17,31 +17,39 @@
   .home-start pre {
     margin-bottom: 1.5em;
   }
-  .trip-stop {
+
+  .map-bubble {
     width: 400px;
     overflow: hidden;
+    background-color: #3eb221;
+
   }
-  .trip-stop h2 {
+  .map-bubble h2 {
     font-size: 1.4em;
     margin-top: 0;
     margin-bottom: 0.2em;
+    
   }
-  .trip-stop p, .trip-stop ul, .trip-stop h3 {
+  .map-bubble p, .map-bubble ul, .map-bubble h3 {
     font-size: 1.2em;
     font-weight: normal;
+    color: #21b2a6;
+
   }
-  .trip-stop p {
+  .map-bubble p {
     margin: 0.2em 0;
+    color: #052922;
+
   }
-  .trip-stop .trip-stop-date {
-    color: #2915da;
+  .map-bubble .map-bubble-text {
     font-size: 1em;
   }
-  .trip-stop ul {
+  .map-bubble ul {
     padding: 0 0 0 1.4em;
     margin: 0;
+    
   }
-  .trip-stop-image {
+  .map-bubble-image {
     display: block;
     float: left;
     overflow: hidden;
@@ -51,11 +59,67 @@
     color: transparent;
     background-position: center;
     background-size: cover;
+    color: #21b2a6;
+
+  }
+  .map-bubble-content {
+    float: left;
+    width: 250px;
+    padding-left: 1em;
+    color: #21b2a6;
+
+  }
+  .trip-stop {
+    width: 400px;
+    overflow: scroll;
+    color: #21b2a6;
+    background-color: #757ed6;
+
+
+  }
+  .trip-stop h2 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    color: #21b2a6;
+
+  }
+  .trip-stop p, .trip-stop ul, .trip-stop h3 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #052922;
+
+  }
+  .trip-stop p {
+    margin: 0.2em 0;
+  }
+  .trip-stop .trip-stop-date {
+    color: #052922;
+    font-size: 1.5em;
+    font-family: "Lucida Console"
+  }
+  .trip-stop ul {
+    padding: 0 0 0 1.4em;
+    margin: 0;
+  }
+  .trip-stop-image {
+    display: block;
+    float: left;
+    overflow: auto;
+    width: 30%;
+    height: 120px;
+    text-indent: 100%;
+    color: transparent;
+    background-position: center;
+    background-size: cover;
   }
   .trip-stop-content {
     float: left;
     width: 250px;
-    padding-left: 1em;
+    padding-left: 2em;
+    background-color: #21b2a6;
+
+
   }
   .icon-trip-stop {
     display: block;
