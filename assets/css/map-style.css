@@ -18,38 +18,38 @@
     margin-bottom: 1.5em;
   }
 
-  .map-bubble {
+  .to-do-list-box {
     width: 400px;
     overflow: hidden;
-    background-color: #3eb221;
+    /*background-color: #3eb221;*/
 
   }
-  .map-bubble h2 {
+  .to-do-list-box h2 {
     font-size: 1.4em;
     margin-top: 0;
     margin-bottom: 0.2em;
     
   }
-  .map-bubble p, .map-bubble ul, .map-bubble h3 {
+  .to-do-list-box p, .to-do-list-box ul, .to-do-list-box h3 {
     font-size: 1.2em;
     font-weight: normal;
     color: #21b2a6;
 
   }
-  .map-bubble p {
+  .to-do-list-box p {
     margin: 0.2em 0;
     color: #052922;
 
   }
-  .map-bubble .map-bubble-text {
+  .to-do-list-box .to-do-list-box-text {
     font-size: 1em;
   }
-  .map-bubble ul {
+  .to-do-list-box ul {
     padding: 0 0 0 1.4em;
     margin: 0;
     
   }
-  .map-bubble-image {
+  .to-do-list-box-image {
     display: block;
     float: left;
     overflow: hidden;
@@ -62,7 +62,7 @@
     color: #21b2a6;
 
   }
-  .map-bubble-content {
+  .to-do-list-box-content {
     float: left;
     width: 250px;
     padding-left: 1em;
@@ -72,8 +72,7 @@
   .trip-stop {
     width: 400px;
     overflow: scroll;
-    color: #21b2a6;
-    background-color: #757ed6;
+    background-color: #21b2a6;
 
 
   }
@@ -81,22 +80,21 @@
     font-size: 1.4em;
     margin-top: 0;
     margin-bottom: 0.2em;
-    color: #21b2a6;
+    color: #b3e4e0;
 
   }
   .trip-stop p, .trip-stop ul, .trip-stop h3 {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: normal;
-    color: #052922;
+    color: #b3e4e0;
 
   }
   .trip-stop p {
     margin: 0.2em 0;
   }
   .trip-stop .trip-stop-date {
-    color: #052922;
-    font-size: 1.5em;
-    font-family: "Lucida Console"
+    color: #9ad4d0;
+    font-size: 1em;
   }
   .trip-stop ul {
     padding: 0 0 0 1.4em;
@@ -117,9 +115,6 @@
     float: left;
     width: 250px;
     padding-left: 2em;
-    background-color: #21b2a6;
-
-
   }
   .icon-trip-stop {
     display: block;

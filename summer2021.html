@@ -7,7 +7,7 @@
 <html>
   <head>
     <title> Jenny Wang</title>
-    <link rel='icon' href='favicon.ico' type='image/x-icon'/>
+    <link rel='icon' href='./images/favicon.ico' type='image/x-icon'/>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -18,11 +18,20 @@
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PG0LRS8WNJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PG0LRS8WNJ');
+    </script>
 
     <!-- Styles and rules for the travel map!!!! -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
     <link rel="stylesheet" href="../assets/css/map-style.css" />
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
     <style>
     #map{ width: 100%; height: 500px; }
@@ -60,7 +69,7 @@
             Where am I right now? <br />
           </p>
           <ul class="actions special">
-            <li><a href="#three" target="_blank" class="button">Photos</a></li>
+            <li><a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" class="button">Photos</a></li>
           </ul>
         </div>
         <a href="#three" class="more scrolly">Learn More</a>
@@ -73,129 +82,121 @@
           <header class="major">
             <h2>Road Trip Map</h2>
             <p style="font-size: smaller;">
+              <i>Note: Must use computer web browser to view</i>
               This map was built using Javascript, HTML/CSS, and the Leaflet open-source library. I had to make a few
-              tweaks to fit it on this webpage, so it's not the cleanest code ☹. Regardless, I hope 
-              this map gives you a better idea of what I want to get out of this trip!
+              tweaks to fit it on this webpage, so it's not the cleanest code ever 😢. Regardless, I hope 
+              this map gives a good idea of what I want to get out of this trip!
             </p>
           </header>
-
           <div id="map"></div>
           <script type="module">
               export const locations = [
               {
               placename: "Cheshire, CT",
-              date: "FRIDAY, JULY 2, 2021",
-              image: "images/spongebob-todolist.gif",
+              date: "Friday, July 2, 2021",
+              image: "https://media1.giphy.com/media/j2wpZyLy2s70ul4TKo/200w.gif?cid=82a1493b3735pg7m2jyjxz08g6yy5rkgtprz8x9felw8e6k9&rid=200w.gif&ct=g",
               location: { lat: 41.4989861, lng: -72.900658 },
-              todo: ["Pack car full of bags", "Get ready for a 9 hour drive to Cleveland"],
+              todo: ["Pack up car", "Prepare road trip snacks", "Get ready for a 9 hour drive 🤢"],
             },
             {
               placename: "Cleveland, Ohio",
-              date: "July 3, 2021",
-              image: "images/to-do-list.gif",
+              date: "Friday, July 2, 2021",
+              image: "https://media0.giphy.com/media/f9AzEOcc6Vj1KUGQqn/200w.gif?cid=82a1493bpyzx240p384wke96antg8ded8tlmn7uw9u2ahw42&rid=200w.gif&ct=g",
               location: { lat: 41.5051613, lng: -81.6934446 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Drive along Lake Erie", "Try Ohio buckeyes"],
             },
             {
               placename: "Chicago, Illinois",
-              date: "July 4, 2021",
-              image: "placeholder.gif",
+              date: "Saturday, July 3, 2021",
+              image: "https://i.pinimg.com/originals/66/45/59/6645592777c4069a4325bc0726a4180a.gif",
               location: { lat: 41.8755616, lng: -87.6244212 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Explore the city", "Eat deep-dish pizza", "Visit the Chicago Bean"],
             },
             {
               placename: "Chicago, Illinois",
-              date: "July 5, 2021",
-              image: "placeholder.gif",
+              date: "Sunday, July 4, 2021",
+              image: "https://i.pinimg.com/originals/66/45/59/6645592777c4069a4325bc0726a4180a.gif",
               location: { lat: 41.8755616, lng: -87.6244212 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Explore the city", "Eat deep-dish pizza", "Visit the Chicago Bean"],
             },
             {
               placename: "Des Moines, Iowa",
-              date: "July 6, 2021",
-              image: "placeholder.gif",
+              date: "Monday, July 5, 2021",
+              image: "https://media1.giphy.com/media/9GJ2QwXVSbkAqEVrfw/giphy.gif",
               location: { lat: 41.5910323, lng: -93.6046655 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["There's nothing to do, so we might try to go skydiving 😳"],
             },
             {
               placename: "Kansas City, Missouri",
-              date: "July 7, 2021",
-              image: "placeholder.gif",
+              date: "Tuesday, July 6, 2021",
+              image: "https://media.tenor.com/images/7b0b8fd9816ee983f43958b630b3953b/tenor.gif",
               location: { lat: 39.100105, lng: -94.5781416 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Their steak is supposed to be really good?"],
             },
             {
               placename: "Hayes, Kansas",
-              date: "July 8, 2021",
-              image: "placeholder.gif",
+              date: "Wednesday, July 7, 2021",
+              image: "https://media.tenor.com/images/7b0b8fd9816ee983f43958b630b3953b/tenor.gif",
               location: { lat: 38.909623, lng: -94.692127 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Find somewhere to sleep in never-ending Kansas"],
             },
             {
               placename: "Denver, Colorado",
-              date: "July 9, 2021",
-              image: "placeholder.gif",
+              date: "Thursday, July 8, 2021",
+              image: "https://lh3.googleusercontent.com/proxy/K-540oY7aSf8wWOJyfyDOm98QEdmW8lSXrdy_sM7XKx3tYbHmvuxquGR6wCJSdh_kSRsOl1h_XYrsLfXf2137h98RQ",
               location: { lat: 39.7392364, lng: -104.9848623 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Explore the city", "Go hiking", "🍃 "],
             },
             {
               placename: "Denver, Colorado",
-              date: "July 10, 2021",
-              image: "placeholder.gif",
+              date: "Friday, July 9, 2021",
+              image: "https://lh3.googleusercontent.com/proxy/K-540oY7aSf8wWOJyfyDOm98QEdmW8lSXrdy_sM7XKx3tYbHmvuxquGR6wCJSdh_kSRsOl1h_XYrsLfXf2137h98RQ",
               location: { lat: 39.7392364, lng: -104.9848623 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Explore the city", "Go hiking", "🍃 "],
             },
             {
               placename: "Grand Junction, Colorado",
-              date: "July 11, 2021",
-              image: "placeholder.gif",
+              date: "Saturday, July 10, 2021",
+              image: "https://media4.giphy.com/media/J4Jk2Wn6Te6lCKNGPK/giphy.gif?cid=6c09b95273618074167f6fa690dfa27a7311184aaf6229a2&rid=giphy.gif&ct=g",
               location: { lat: 39.063956, lng: -108.5507317 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Not really sure yet-stop is tbd"],
             },
             {
               placename: "Salt Lake City, Utah",
-              date: "July 12, 2021",
-              image: "placeholder.gif",
+              date: "Sunday, July 11, 2021",
+              image: "https://media0.giphy.com/media/MU5DldjeshsLS6ckzf/giphy.gif?cid=6c09b952j8r73ztbqoagjl8eewrbf1061o6izl7ehpv7ky3s&rid=giphy.gif&ct=s",
               location: { lat: 40.7596198, lng: -111.8867975 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Walk around the city", "Red Butte Garden"],
             },
             {
               placename: "Battle Mountain, Nevada",
-              date: "July 13, 2021",
-              image: "placeholder.gif",
+              date: "Monday, July 12, 2021",
+              image: "https://media2.giphy.com/media/3oKIPDy4O5iSWBn9gA/giphy.gif",
               location: { lat: 40.6418373, lng: -116.9384789 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Not really sure yet-stop is tbd"],
             },
             {
               placename: "Reno, Nevada",
-              date: "July 14, 2021",
-              image: "placeholder.gif",
+              date: "Tuesday, July 13, 2021",
+              image: "https://i.giphy.com/media/xUn3CftPBajoflzROU/giphy.webp",
               location: { lat: 39.5442688, lng: -119.81631051527071 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Drive-in Movie Theater"],
             },
             {
               placename: "Reno, Nevada",
-              date: "July 15, 2021",
-              image: "placeholder.gif",
+              date: "Wednesday, July 14, 2021",
+              image: "https://i.giphy.com/media/xUn3CftPBajoflzROU/giphy.webp",
               location: { lat: 39.5442688, lng: -119.81631051527071 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["Drive-in Movie Theater"],
             },
             {
               placename: "Berkeley, California",
-              date: "July 16, 2021",
-              image: "placeholder.gif",
+              date: "Thursday, July 15, 2021",
+              image: "https://i.pinimg.com/originals/63/9e/55/639e55d19f799a00be36a38cb50a5d47.gif",
               location: { lat: 37.8753497, lng: -122.23963364918777 },
-              todo: ["We are currently figuring out what to do lol"],
-            },
-            {
-              placename: "Berkeley, California",
-              date: "July 17, 2021",
-              image: "placeholder.gif",
-              location: { lat: 37.8753497, lng: -122.23963364918777 },
-              todo: ["We are currently figuring out what to do lol"],
+              todo: ["We made it 🥳"],
             },
           ];
-
             // initialize the map
             var map = L.map('map').setView([42.35, -71.08], 13);
           
@@ -303,8 +304,8 @@
             if ( Array.isArray(list) && list.length > 0 ) {
               listString = list.join('');
               listString = `
-              <div class="map-bubble">
-                <p><i>To-Do List:</i></p>
+              <div class="to-do-list-box">
+                <p><b><i>To-Do List:</i></b></p>
                 <ul>${listString}</ul>
               </div>
               `
@@ -320,7 +321,7 @@
               <div class="trip-stop">
                 ${ imageString }
                 <div class="trip-stop-content">
-                  <h2>"HELLO" ${placename}</h2>
+                  <h2>${placename}</h2>
                   <p class="trip-stop-date">${date}</p>
                   ${ listString }
                 </div>
@@ -345,12 +346,11 @@
            
             </script>
 
-
-
-
-
-
 <!-- Features that appear after the map-->
+
+           <!--divider between map and boxes--> 
+          <div> </br></div>
+
 
           <ul class="features">
             <li class="icon solid fa-home">
@@ -363,58 +363,58 @@
             </li>
             <li class="icon solid fa-car">
               <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Ohio</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                <span style="background-color: #052922; color:#00f0ff">Friday</span>
               </p>
             </li>
             <li class="icon solid fa-car">
               <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Illinois</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Saturday</span>
                 <span style="background-color: #052922; color:#76ddff">Sunday</span>
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://docs.google.com/presentation/d/1gFoHRWE8pjg5YQ2aP3htUWq13veSPiZux8-2RModgb4/edit?usp=sharing" target="_blank"><h3>Iowa</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Iowa</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Monday</span>
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://drive.google.com/file/d/1VGixodkw3QPk0Z7jV7sZg8dqdr-kWzxa/view?usp=sharing" target="_blank"><h3>Missouri</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Missouri</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Tuesday</span>
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://www.youtube.com/watch?v=DykZEOV5wD4" target="_blank"><h3>Kansas</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Kansas</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Wednesday</span>
                 <span style="background-color: #052922; color:#76ddff">Thursday</span>
 
             </li>
             <li class="icon solid fa-car">
-              <a href="https://www.youtube.com/watch?v=DykZEOV5wD4" target="_blank"><h3>Colorado</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Colorado</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Friday</span>
                 <span style="background-color: #052922; color:#76ddff">Saturday</span>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://docs.google.com/presentation/d/1gFoHRWE8pjg5YQ2aP3htUWq13veSPiZux8-2RModgb4/edit?usp=sharing" target="_blank"><h3>Utah</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Utah</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Sunday</span>
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://drive.google.com/file/d/1VGixodkw3QPk0Z7jV7sZg8dqdr-kWzxa/view?usp=sharing" target="_blank"><h3>Nevada</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Nevada</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Monday</span>
                 <span style="background-color: #052922; color:#76ddff">Tuesday</span>
@@ -423,8 +423,8 @@
               </p>
             </li>
             <li class="icon solid fa-map-pin">
-              <a href="https://github.com/jennyw23/ambient" target="_blank" ><h3>California</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: (1) try food this state is known for<br />
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>California</h3></a>
+              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
                 (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
                 <span style="background-color: #052922; color:#00f0ff">Thursday</span>
               </p>
