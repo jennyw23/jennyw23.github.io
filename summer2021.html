@@ -29,9 +29,15 @@
     </script>
 
     <!-- Styles and rules for the travel map!!!! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
+    <link rel="stylesheet" href="../assets/css/map-style.css" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+
+    <!--
     <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
     <link rel="stylesheet" href="../assets/css/map-style.css" />
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
     <style>
     #map{ width: 100%; height: 500px; }
@@ -82,10 +88,10 @@
           <header class="major">
             <h2>Road Trip Map</h2>
             <p style="font-size: smaller;">
-              <i>Note: Must use computer web browser to view</i>
-              This map was built using Javascript, HTML/CSS, and the Leaflet open-source library. I had to make a few
-              tweaks to fit it on this webpage, so it's not the cleanest code ever 😢. Regardless, I hope 
-              this map gives a good idea of what I want to get out of this trip!
+              This map was built using Javascript, HTML/CSS, and the Leaflet open-source library. It was thrown together a 
+              bit scrappily, but regardless, I hope it gives a rough idea of our <i>expected</i> route for this trip! 
+              <strong>Note:</strong> After arriving in California, I've now added a second map detailing the <i>actual</i> route we followed 
+              from coast to coast...
             </p>
           </header>
           <div id="map"></div>
@@ -99,11 +105,18 @@
               todo: ["Pack up car", "Prepare road trip snacks", "Get ready for a 9 hour drive 🤢"],
             },
             {
+              placename: "North, Tonawanda, NY",
+              date: "Friday, July 2, 2021",
+              image: "https://media2.giphy.com/media/jpxjacGJcdies/giphy.gif",
+              location: { lat: 43.0387, lng: -78.8642 },
+              todo: ["Stop by Niagara Falls", "Grab a computer monitor from random dude on Facebook Marketplace lol"],
+            },
+            {
               placename: "Cleveland, Ohio",
               date: "Friday, July 2, 2021",
               image: "https://media0.giphy.com/media/f9AzEOcc6Vj1KUGQqn/200w.gif?cid=82a1493bpyzx240p384wke96antg8ded8tlmn7uw9u2ahw42&rid=200w.gif&ct=g",
               location: { lat: 41.5051613, lng: -81.6934446 },
-              todo: ["Drive along Lake Erie", "Try Ohio buckeyes"],
+              todo: ["Drive along Lake Erie", "Try Ohio buckeyes", "Visit downtown"],
             },
             {
               placename: "Chicago, Illinois",
@@ -143,14 +156,14 @@
             {
               placename: "Denver, Colorado",
               date: "Thursday, July 8, 2021",
-              image: "https://lh3.googleusercontent.com/proxy/K-540oY7aSf8wWOJyfyDOm98QEdmW8lSXrdy_sM7XKx3tYbHmvuxquGR6wCJSdh_kSRsOl1h_XYrsLfXf2137h98RQ",
+              image: "https://i0.wp.com/media1.giphy.com/media/l4FGy0037JqVRb3BC/giphy.gif",
               location: { lat: 39.7392364, lng: -104.9848623 },
               todo: ["Explore the city", "Go hiking", "🍃 "],
             },
             {
               placename: "Denver, Colorado",
               date: "Friday, July 9, 2021",
-              image: "https://lh3.googleusercontent.com/proxy/K-540oY7aSf8wWOJyfyDOm98QEdmW8lSXrdy_sM7XKx3tYbHmvuxquGR6wCJSdh_kSRsOl1h_XYrsLfXf2137h98RQ",
+              image: "https://i0.wp.com/media1.giphy.com/media/l4FGy0037JqVRb3BC/giphy.gif",
               location: { lat: 39.7392364, lng: -104.9848623 },
               todo: ["Explore the city", "Go hiking", "🍃 "],
             },
@@ -351,84 +364,83 @@
            <!--divider between map and boxes--> 
           <div> </br></div>
 
+            7/18/2021 Update: I'm currently compiling all my thoughts in a more comprehensive journal entry. I'll be sure to
+            update this website with my takeaways in a more organized fashion :)
+          <div> </br></div>
 
           <ul class="features">
             <li class="icon solid fa-home">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Connecticut</h3></a>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Day 1 (July 2)</h3></a>
               <p>                
-                It was great catching up with friends at home this summer, but now it's time for cheesy photos and
-                new adventures traveling across the United States. If you've somehow found your way to this blog, feel 
-                free to follow along as I review my experiences from east to west ☺<br />
+                <span style="background-color: #052922; color:#00f0ff">Connecticut</span>
+                <span style="background-color: #052922; color:#76ddff">Massachusetts</span>     
+                <span style="background-color: #052922; color:#00ffcc">New York</span>
+                <span style="background-color: #052922; color:#00ffcc">Pennsylvania</span>     
+                <span style="background-color: #052922; color:#00f0ff">Ohio</span>
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Ohio</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-               (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-               <span style="background-color: #052922; color:#00f0ff">Friday</span>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Day 2 (July 3)</h3></a>
+               <p> 
+                <span style="background-color: #052922; color:#00f0ff">Ohio</span>
+                <span style="background-color: #052922; color:#76ddff">Indiana</span>  
+                <span style="background-color: #052922; color:#00ffcc">Illinois</span>  
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Illinois</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Saturday</span>
-                <span style="background-color: #052922; color:#76ddff">Sunday</span>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Days 3-4 (July 4-5)</h3></a>
+               <p> 
+                <span style="background-color: #052922; color:#00ffcc">Chicago, Illinois</span>  
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Iowa</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Monday</span>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank" ><h3>Day 5 (July 6)</h3></a>
+               <p> 
+                <span style="background-color: #052922; color:#00f0ff">Illinois</span>
+                <span style="background-color: #052922; color:#76ddff">Iowa</span>  
+                <span style="background-color: #052922; color:#00ffcc">Missouri</span>  
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Missouri</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Tuesday</span>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Day 6 (July 7)</h3></a>
+              <p>
+                <span style="background-color: #052922; color:#00f0ff">Missouri</span>
+                <span style="background-color: #052922; color:#76ddff">Kansas</span>  
+                <span style="background-color: #052922; color:#00ffcc">Colorado</span>  
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Kansas</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Wednesday</span>
-                <span style="background-color: #052922; color:#76ddff">Thursday</span>
-
-            </li>
-            <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Colorado</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Friday</span>
-                <span style="background-color: #052922; color:#76ddff">Saturday</span>
-            </li>
-            <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Utah</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Sunday</span>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Days 7-8 (July 8-9)</h3></a>
+              <p>
+                <span style="background-color: #052922; color:#00f0ff">Denver, Colorado</span>
               </p>
             </li>
             <li class="icon solid fa-car">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Nevada</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Monday</span>
-                <span style="background-color: #052922; color:#76ddff">Tuesday</span>
-                <span style="background-color: #052922; color:#00ffcc">Wednesday</span>
-
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Day 9 (July 10)</h3></a>
+              <p>
+                <span style="background-color: #052922; color:#00f0ff">Colorado</span>
+                <span style="background-color: #052922; color:#76ddff">Utah</span>  
               </p>
-            </li>
+            </li>                       
+            <li class="icon solid fa-car">
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Day 10 (July 11)</h3></a>
+              <p>
+                <span style="background-color: #052922; color:#00f0ff">Utah</span>
+                <span style="background-color: #052922; color:#76ddff">Nevada</span>  
+              </p>
+            </li>   
+            <li class="icon solid fa-car">
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Days 11-12 (July 12-13)</h3></a>
+              <p>
+                <span style="background-color: #052922; color:#00f0ff">Las Vegas, Nevada</span>
+              </p>
+            </li>  
             <li class="icon solid fa-map-pin">
-              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>California</h3></a>
-              <p>This text will change once we drive through... In every state we plan to: <br />(1) try food this state is known for<br />
-                (2) go to a grocery store/fast food chain that is not in New England<br /> (3) "pepper" a volleyball at a stop.<br /><br />
-                <span style="background-color: #052922; color:#00f0ff">Thursday</span>
+              <a href="https://photos.app.goo.gl/m2HtZqeFaYf3yEqd7" target="_blank"><h3>Days 13-14 (July 14-15)</h3></a>
+              <p>
+                <span style="background-color: #052922; color:#00f0ff">California</span>
               </p>
-            </li>
+            </li>      
             </li>
           </ul>
         </div>
