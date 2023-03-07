@@ -70,6 +70,15 @@
 	-->
 	<link rel="shortcut icon" href="../images/favicons/favicon.ico">
 
+	<!-- Styles and rules for the travel map!!!! -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
+	<link rel="stylesheet" href="../css/map-style.css" />
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+    <style>
+    #map{ width: 100%; height: 500px; }
+    </style>
+
 </head>
 
 <body>
@@ -120,7 +129,7 @@
 				<div class="top-menu">
 					<ul>
 						<li>
-							<a href="../index-new.html">
+							<a href="../index.html">
 								<span class="icon ion-person"></span>
 								<span class="link">Home</span>
 							</a>
@@ -187,10 +196,10 @@
 
 					<!-- profile buttons -->
 					<div class="lnks">
-						<a href="#" class="lnk">
+						<a href="../files/jenny-wang-resume.pdf" target="_blank" class="lnk">
 							<span class="text">Download CV</span>
 						</a>
-						<a href="../index-new.html" class="lnk discover">
+						<a href="../index.html" class="lnk discover">
 							<span class="text">Back to Home</span>
 						</a>
 					</div>
@@ -223,7 +232,7 @@
 									<div class="blog-detail">
 										<span class="date">July - August 2021 </span>
 										<span class="cat-links"><a href="#">Summer</a>, <a href="#">Travel</a>, <a href="#">Road Trip</a></span>
-										<span class="byline"> by <span class="author"><a href="../index-new.html">admin</a></span></span>
+										<span class="byline"> by <span class="author"><a href="../index.html">admin</a></span></span>
 									</div>
 
 									<!-- blog image -->
@@ -235,15 +244,283 @@
 
 									<!-- blog content -->
 									<div class="blog-content">
+										<a href="https://photos.google.com/share/AF1QipNvuUOvI1GNudBNZ_p_mD0J0pDEZ3uHbkPOwM_xmbOjBehltHuUJpHZaMnuQWm-KA?pli=1&key=dTFrSU1iZXRnSXJJTzVtdGpfWUthS2pUaUdjeVVB" target="_blank" class="button">
+											<span class="text">View Photo Album</span>
+											<span class="arrow"></span>
+										</a>
+										<p></p>
 										<p>
-											While interpretations of Herodotus’ Histories are widespread, scholars generally agree upon one point: its composition is one of a kind. The Histories intertwines battle narratives, anthropology, folklore, geography, and politics into a monolithic  “display of inquiry” written to ensure that “human achievements may not become forgotten in time” (Herodotus et al. 1.1.1). Within his definition of “human achievement”, Herodotus also includes description of native and foreign culture, interaction with the divine, and manipulation of physical resources. Given the modern academic mindset of narrowing in on a specific subject, it is easy to pigeonhole Herodotus’ work into a particular category. However, Herodotus lived during a period of enlightenment where intellectuals often meddled in various schools of interest. Keeping this societal contrast in mind, we must remind ourselves that viewing Histories as a distinct genre to the exclusion of others arbitrarily reduces the work to just one of its ingredients. Furthermore, we must recognize that creating retrojections based on modern thought excludes the text’s multidimensional texture. If we consider commonalities between Herodotus’ ethnographies, oracular warnings, and diverse digressions, we notice that he frequently seasons passages with moral wisdoms and lessons. While these messages vary, the ultimate combination Herodotus stews together is rich with depth and flavor. In this paper, I argue that while Histories is unquestionably a work of great breadth, Herodotus’ primary objective is to make use of its multifaceted complexity to push a moral agenda to broader audiences, especially to those less receptive to foreign strengths.
-
+											My "Road Trip Map" was built using Javascript, HTML/CSS, and the Leaflet open-source library. It was thrown together a bit scrappily, but regardless, I hope it gives a rough idea of our expected route for this trip! I primarily documented my journey through photos (unfortunately, there was not much time for blog writing...)
 										</p>
-										<p>
-											While reading Histories, we slowly adjust to Herodotus’ structure and persistent pauses. By the time we reach the story of King Cambyses and his disrespect of Egyptian culture, we have already grown accustomed to Herodotus’ interjections:
 
-										</p>
+
+										<!-- Map stuff-->
+										<div id="map"></div>
+										<script type="module">
+											export const locations = [
+											{
+											placename: "Cheshire, CT",
+											date: "Friday, July 2, 2021",
+											image: "https://media1.giphy.com/media/j2wpZyLy2s70ul4TKo/200w.gif?cid=82a1493b3735pg7m2jyjxz08g6yy5rkgtprz8x9felw8e6k9&rid=200w.gif&ct=g",
+											location: { lat: 41.4989861, lng: -72.900658 },
+											todo: ["Pack up car", "Prepare road trip snacks", "Get ready for a 9 hour drive 🤢"],
+										  },
+										  {
+											placename: "North, Tonawanda, NY",
+											date: "Friday, July 2, 2021",
+											image: "https://media2.giphy.com/media/jpxjacGJcdies/giphy.gif",
+											location: { lat: 43.0387, lng: -78.8642 },
+											todo: ["Stop by Niagara Falls", "Grab a computer monitor from random dude on Facebook Marketplace lol"],
+										  },
+										  {
+											placename: "Cleveland, Ohio",
+											date: "Friday, July 2, 2021",
+											image: "https://media0.giphy.com/media/f9AzEOcc6Vj1KUGQqn/200w.gif?cid=82a1493bpyzx240p384wke96antg8ded8tlmn7uw9u2ahw42&rid=200w.gif&ct=g",
+											location: { lat: 41.5051613, lng: -81.6934446 },
+											todo: ["Drive along Lake Erie", "Try Ohio buckeyes", "Visit downtown"],
+										  },
+										  {
+											placename: "Chicago, Illinois",
+											date: "Saturday, July 3, 2021",
+											image: "https://i.pinimg.com/originals/66/45/59/6645592777c4069a4325bc0726a4180a.gif",
+											location: { lat: 41.8755616, lng: -87.6244212 },
+											todo: ["Explore the city", "Eat deep-dish pizza", "Visit the Chicago Bean"],
+										  },
+										  {
+											placename: "Chicago, Illinois",
+											date: "Sunday, July 4, 2021",
+											image: "https://i.pinimg.com/originals/66/45/59/6645592777c4069a4325bc0726a4180a.gif",
+											location: { lat: 41.8755616, lng: -87.6244212 },
+											todo: ["Explore the city", "Eat deep-dish pizza", "Visit the Chicago Bean"],
+										  },
+										  {
+											placename: "Des Moines, Iowa",
+											date: "Monday, July 5, 2021",
+											image: "https://media1.giphy.com/media/9GJ2QwXVSbkAqEVrfw/giphy.gif",
+											location: { lat: 41.5910323, lng: -93.6046655 },
+											todo: ["There's nothing to do, so we might try to go skydiving 😳"],
+										  },
+										  {
+											placename: "Kansas City, Missouri",
+											date: "Tuesday, July 6, 2021",
+											image: "https://media.tenor.com/images/7b0b8fd9816ee983f43958b630b3953b/tenor.gif",
+											location: { lat: 39.100105, lng: -94.5781416 },
+											todo: ["Their steak is supposed to be really good?"],
+										  },
+										  {
+											placename: "Hayes, Kansas",
+											date: "Wednesday, July 7, 2021",
+											image: "https://media.tenor.com/images/7b0b8fd9816ee983f43958b630b3953b/tenor.gif",
+											location: { lat: 38.909623, lng: -94.692127 },
+											todo: ["Find somewhere to sleep in never-ending Kansas"],
+										  },
+										  {
+											placename: "Denver, Colorado",
+											date: "Thursday, July 8, 2021",
+											image: "https://i0.wp.com/media1.giphy.com/media/l4FGy0037JqVRb3BC/giphy.gif",
+											location: { lat: 39.7392364, lng: -104.9848623 },
+											todo: ["Explore the city", "Go hiking", "🍃 "],
+										  },
+										  {
+											placename: "Denver, Colorado",
+											date: "Friday, July 9, 2021",
+											image: "https://i0.wp.com/media1.giphy.com/media/l4FGy0037JqVRb3BC/giphy.gif",
+											location: { lat: 39.7392364, lng: -104.9848623 },
+											todo: ["Explore the city", "Go hiking", "🍃 "],
+										  },
+										  {
+											placename: "Grand Junction, Colorado",
+											date: "Saturday, July 10, 2021",
+											image: "https://media4.giphy.com/media/J4Jk2Wn6Te6lCKNGPK/giphy.gif?cid=6c09b95273618074167f6fa690dfa27a7311184aaf6229a2&rid=giphy.gif&ct=g",
+											location: { lat: 39.063956, lng: -108.5507317 },
+											todo: ["Not really sure yet-stop is tbd"],
+										  },
+										  {
+											placename: "Salt Lake City, Utah",
+											date: "Sunday, July 11, 2021",
+											image: "https://media0.giphy.com/media/MU5DldjeshsLS6ckzf/giphy.gif?cid=6c09b952j8r73ztbqoagjl8eewrbf1061o6izl7ehpv7ky3s&rid=giphy.gif&ct=s",
+											location: { lat: 40.7596198, lng: -111.8867975 },
+											todo: ["Walk around the city", "Red Butte Garden"],
+										  },
+										  {
+											placename: "Battle Mountain, Nevada",
+											date: "Monday, July 12, 2021",
+											image: "https://media2.giphy.com/media/3oKIPDy4O5iSWBn9gA/giphy.gif",
+											location: { lat: 40.6418373, lng: -116.9384789 },
+											todo: ["Not really sure yet-stop is tbd"],
+										  },
+										  {
+											placename: "Reno, Nevada",
+											date: "Tuesday, July 13, 2021",
+											image: "https://i.giphy.com/media/xUn3CftPBajoflzROU/giphy.webp",
+											location: { lat: 39.5442688, lng: -119.81631051527071 },
+											todo: ["Drive-in Movie Theater"],
+										  },
+										  {
+											placename: "Reno, Nevada",
+											date: "Wednesday, July 14, 2021",
+											image: "https://i.giphy.com/media/xUn3CftPBajoflzROU/giphy.webp",
+											location: { lat: 39.5442688, lng: -119.81631051527071 },
+											todo: ["Drive-in Movie Theater"],
+										  },
+										  {
+											placename: "Berkeley, California",
+											date: "Thursday, July 15, 2021",
+											image: "https://i.pinimg.com/originals/63/9e/55/639e55d19f799a00be36a38cb50a5d47.gif",
+											location: { lat: 37.8753497, lng: -122.23963364918777 },
+											todo: ["We made it 🥳"],
+										  },
+										];
+										  // initialize the map
+										  var map = L.map('map').setView([42.35, -71.08], 13);
 										
+										  // load a tile layer
+										  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+											{
+											  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+											}).addTo(map);
+										
+											const tripPoints = createTripPointsGeoJson({ locations });
+											console.log("Trip Points", tripPoints)
+										   
+											const tripLines = createTripLinesGeoJson({ locations });
+										
+											// create "pins" and lines from destination A to B
+											const tripPointsGeoJsonLayers = new L.geoJson(tripPoints, {
+											   pointToLayer: tripStopPointToLayer
+											 });
+											 const tripLinesGeoJsonLayers = new L.geoJson(tripLines);
+										
+											// draw pins and lines on map
+											tripPointsGeoJsonLayers.addTo(map);
+											tripLinesGeoJsonLayers.addTo(map);
+										
+											const bounds = tripPointsGeoJsonLayers.getBounds();
+											map.fitBounds(bounds);
+										
+										
+										/**
+										 * createTripPointsGeoJson
+										 */
+										
+										 function createTripPointsGeoJson({ locations } = {}) {
+										  return {
+											"type": "FeatureCollection",
+											"features": locations.map(({ placename, location = {}, image, date, todo = [] } = {}) => {
+											  const { lat, lng } = location;
+											  return {
+												"type": "Feature",
+												"properties": {
+												  placename,
+												  todo,
+												  date,
+												  image
+												},
+												"geometry": {
+												  "type": "Point",
+												  "coordinates": [ lng, lat ]
+												}
+											  }
+											})
+										  }
+										}
+										
+										/**
+										 * createTripLinesGeoJson
+										 */
+										
+										function createTripLinesGeoJson({ locations } = {}) {
+										  return {
+											"type": "FeatureCollection",
+											"features": locations.map((stop = {}, index) => {
+											  const prevStop = locations[index - 1];
+										
+											  if ( !prevStop ) return [];
+										
+											  const { placename, location = {}, date, todo = [] } = stop;
+											  const { lat, lng } = location;
+											  const properties = {
+												placename,
+												todo,
+												date
+											  };
+										
+											  const { location: prevLocation = {} } = prevStop;
+											  const { lat: prevLat, lng: prevLng } = prevLocation;
+										
+											  return {
+												type: 'Feature',
+												properties,
+												geometry: {
+												  type: 'LineString',
+												  coordinates: [
+													[ prevLng, prevLat ],
+													[ lng, lat ]
+												  ]
+												}
+											  }
+											})
+										  }
+										}
+										
+										/**
+										 * tripStopPointToLayer
+										 */
+										
+										function tripStopPointToLayer( feature = {}, latlng ) {
+										  const { properties = {} } = feature;
+										  const { placename, todo = [], image, date } = properties;
+										
+										  const list = todo.map(what => `<li>${ what }</li>`);
+										  let listString = '';
+										  let imageString = '';
+										
+										  if ( Array.isArray(list) && list.length > 0 ) {
+											listString = list.join('');
+											listString = `
+											<div class="to-do-list-box">
+											  <p><b><i>To-Do List:</i></b></p>
+											  <ul>${listString}</ul>
+											</div>
+											`
+										  }
+										
+										  if ( image ) {
+											imageString = `
+											  <span class="trip-stop-image" style="background-image: url(${image})">${placename}</span>
+											`;
+										  }
+										
+										  const text = `
+											<div class="trip-stop">
+											  ${ imageString }
+											  <div class="trip-stop-content">
+												<h2>${placename}</h2>
+												<p class="trip-stop-date">${date}</p>
+												${ listString }
+											  </div>
+											</div>
+										  `;
+										
+										  const popup = L.popup({
+											maxWidth: 400
+										  }).setContent(text);
+										
+										  const layer = L.marker( latlng, {
+											icon: L.icon({
+											iconUrl: '../images/blog/lyft-car.png',
+											iconSize: [50,40]
+										  }),
+										
+											riseOnHover: true
+										  }).bindPopup(popup);
+										
+										  return layer;
+										}
+										 
+										  </script>
+							  
+							  <!-- Features that appear after the map-->
 									</div>
 
 									<div class="post-text-bottom">
