@@ -1,3 +1,9 @@
+  /* Added root variables - Jenny */
+  :root {
+    --COLOR-SCHEME: #0856c1; /* --red: #e8676b */
+  }
+
+
 .page-home .map, .page-home .map-base {
     height: 50vh;
   }
@@ -80,13 +86,13 @@
     font-size: 1.4em;
     margin-top: 0;
     margin-bottom: 0.2em;
-    color: #e8676b;
+    color: var(--COLOR-SCHEME);
 
   }
   .trip-stop p, .trip-stop ul, .trip-stop h3 {
     font-size: 1em;
     font-weight: normal;
-    color: #e8676b;
+    color: var(--COLOR-SCHEME);
 
   }
   .trip-stop p {
