@@ -48,8 +48,8 @@
 	<!--
 		Template Colors
 	-->
-	<link rel="stylesheet" href="css/template-colors/green.css" />
-	<!-- <link rel="stylesheet" href="css/template-colors/blue.css" /> -->
+	<!-- <link rel="stylesheet" href="css/template-colors/green.css" /> -->
+	<link rel="stylesheet" href="css/template-colors/blue.css" />
 	<!-- <link rel="stylesheet" href="css/template-colors/orange.css" /> -->
 	<!-- <link rel="stylesheet" href="css/template-colors/pink.css" /> -->
 	<!-- <link rel="stylesheet" href="css/template-colors/purple.css" /> -->
@@ -71,6 +71,32 @@
 	-->
 	<link rel="shortcut icon" href="images/favicons/favicon_blue.ico">
 
+
+	<style>
+		.abstract-details {
+			margin-top: 8px;
+		}
+		.abstract-details > summary {
+			cursor: pointer;
+			list-style: none;
+			display: inline-block;
+			font-size: 0.78em;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			opacity: 0.55;
+			border-bottom: 1px solid currentColor;
+			user-select: none;
+			transition: opacity 0.2s;
+		}
+		.abstract-details > summary::-webkit-details-marker { display: none; }
+		.abstract-details > summary::marker { display: none; }
+		.abstract-details > summary::before { content: "+ "; }
+		.abstract-details[open] > summary::before { content: "\2212 "; }
+		.abstract-details[open] > summary { opacity: 0.85; }
+		.abstract-details > p {
+			margin-top: 10px;
+		}
+	</style>
 </head>
 
 <body>
@@ -119,9 +145,9 @@
 					<div class="title">Jenny S. Wang</div>
 					<div class="subtitle subtitle-typed">
 						<div class="typing-title">
-							<p>Student</p>
-							<p>Researcher</p>
-							<p>Developer</p>
+							<p>PhD Student</p>
+							<!-- <p>Researcher</p> -->
+							<!-- <p>Developer</p> -->
 						</div>
 					</div>
 				</div>
@@ -133,17 +159,17 @@
 				<div class="top-menu">
 					<ul>
 						<li class="active">
-							<a href="#about-card">
+							<a href="#about">
 								<span class="icon ion-person"></span>
 								<span class="link">About</span>
 							</a>
 						</li>
-						<!-- <li>
-							<a href="#resume-card">
+						<li>
+							<a href="#research">
 								<span class="icon ion-android-list"></span>
-								<span class="link">Skills</span>
+								<span class="link">Research</span>
 							</a>
-						</li> -->
+						</li>
 						<!-- <li>
 							<a href="#works-card">
 								<span class="icon ion-paintbrush"></span>
@@ -186,9 +212,9 @@
 					<!--<div class="subtitle">Web Designer</div>-->
 					<div class="subtitle subtitle-typed">
 						<div class="typing-title">
-							<p>Student</p>
-							<p>Developer</p>
-							<p>Researcher</p>
+							<p>PhD Student</p>
+							<!-- <p>Researcher</p> -->
+							<!-- <p>Developer</p> -->
 						</div>
 					</div>
 
@@ -203,7 +229,7 @@
 					<!-- profile buttons -->
 					<div class="lnks">
 						<a href="https://drive.google.com/file/d/1IVCAHie8WvB_WLFqalfGKOvGPNzmDjO3/view?usp=sharing" target="_blank" class="lnk"> 
-							<span class="text">See My CV</span>
+							<span class="text">Download CV</span>
 							<span class="ion ion-archive"></span>
 						</a>
 						<a href="mailto:jewang@hbs.edu" class="lnk discover">
@@ -219,7 +245,7 @@
 			<!--
 				Card - About
 			-->
-			<div class="card-inner animated active" id="about-card">
+			<div class="card-inner animated active" id="about">
 				<div class="card-wrap">
 
 					<!--
@@ -269,54 +295,6 @@
 
 					</div>
 
-					<!--
-						Fun Fact
-					-->
-					<div class="content fuct">
-
-						<!-- title -->
-						<div class="title">Research Interests</div>
-
-						<!-- content -->
-						<div class="row fuct-items">
-							<!-- fuct item -->
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="fuct-item">
-									<div class="icon"><span class="fas fa-not-equal"></span></div>
-									<div class="name">Identity and Inequality</div>
-								</div>
-							</div>
-
-							<!-- fuct item -->
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="fuct-item">
-									<div class="icon"><span class="fas fa-puzzle-piece"></span></div>
-									<div class="name">Algorithmic Fairness</div>
-								</div>
-							</div>
-
-
-							<!-- fuct item -->
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="fuct-item">
-									<div class="icon"><span class="fas fa-people-carry"></span></div>
-									<div class="name">Decision-Making</div>
-								</div>
-							</div>
-
-							<!-- fuct item -->
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="fuct-item">
-									<div class="icon"><span class="fas fa-robot"></span></div>
-									<div class="name">Human-AI Interaction</div>
-								</div>
-							</div>
-
-
-							<div class="clear"></div>
-						</div>
-
-					</div>
 
 					<!-- Quote -->
 					<!-- <div class="content quote"> -->
@@ -356,324 +334,61 @@
 			</div>
 
 			<!--
-				Card - Resume
+				Card - Research
 			-->
-			<div class="card-inner" id="resume-card">
+			<div class="card-inner" id="research">
 				<div class="card-wrap">
 
 					<!--
-						Resume
+						Research
 					-->
 					<div class="content resume">
 
 						<!-- title -->
-						<div class="title">Skills</div>
+						<div class="title">Research</div>
 
 						<!-- content -->
 						<div class="row">
-							<div class="col col-d-12 col-t-6 col-m-12 border-line-v">
-								<div class="text-box">
-									<p>
-										I discovered my interest in research after several years of building software. I am still eager to learn
-										new skills and technologies, and I hope to design tools that can benefit the research community. 
-										
-									</p>
+							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
+								<div class="resume-items">
+
+									<!-- Paper 1 -->
+									<div class="resume-item border-line-h">
+										<div class="name">Shopping Without Shoppers: How AI Agents Navigate Product Assortments</div>
+										<div class="company">Nil Karacaoglu, Antonio (Toni) Moreno, Jenny S. Wang (alphabetical) &mdash; <em>Work in Progress</em></div>
+										<details class="abstract-details">
+											<summary>Abstract</summary>
+											<p>AI agents are increasingly capable of autonomously executing complex, multi-step tasks. In the retail sector, this means consumers can now delegate their shopping to AI agents that browse assortments, evaluate tradeoffs, and even initiate checkout. With companies like OpenAI, Google, and Amazon deploying these tools at scale, the market impact of this technological shift is not yet understood. While humans face high search costs and rarely browse deeply&mdash;allowing top-ranked products to capture most sales&mdash;AI agents promise to lower search costs and enable more efficient product discovery. Because agents can effectively evaluate large assortments at near-zero marginal cost, classic intuition from search theory suggests that reducing search costs should decrease concentration: consumers (or their agents) should be more willing to explore and discover a wider set of products. Alternatively, AI agents, which are trained on historical corpora, may encode systematic priors or biases toward particular brands or products, which could instead increase concentration. We study whether delegating search to AI agents expands or concentrates demand, and through what mechanisms. To properly understand how AI agents may change user behaviors, we must first understand how humans currently conduct search on e-commerce platforms. </p>
+										</details>
+									</div>
+
+									<!-- Paper 2 -->
+									<div class="resume-item border-line-h">
+										<div class="name">In Your Own Words: Computationally Identifying Interpretable Themes in Free-Text Survey Data</div>
+										<div class="company">Jenny S. Wang, Aliya Saperstein, Emma Pierson &mdash; <em>Work in Progress</em></div>
+										<details class="abstract-details">
+											<summary>Abstract</summary>
+											<p>Free-text survey responses can provide nuance often missed by structured questions, but remain difficult to statistically analyze. To address this, we introduce <strong>In Your Own Words</strong>, a computational framework for exploratory analyses of free-text survey data that identifies structured, interpretable themes in free-text responses more precisely than previous computational approaches, facilitating systematic analysis. To illustrate the benefits of this approach, we apply it to free-text descriptions of race, gender, and sexual orientation from 1,004 U.S. participants. The themes our approach learns have three practical applications in survey research. First, the themes can <em>suggest structured questions</em> to add to future surveys by surfacing salient constructs&mdash;such as belonging and identity fluidity&mdash;that existing surveys do not capture. Second, the themes <em>reveal heterogeneity within standardized categories</em>, explaining additional variation in health, well-being, and identity importance. Third, the themes <em>illuminate systematic discordance between self-identified and perceived identities</em>, highlighting mechanisms of misrecognition that existing measures do not reflect. More broadly, our framework can be deployed in a wide range of survey settings to identify interpretable themes from free text, complementing existing qualitative methods.</p>
+										</details>
+									</div>
+
+									<!-- Paper 3 -->
+									<div class="resume-item border-line-h">
+										<div class="name">The Media Bias Detector: A Framework for Annotating and Analyzing the News at Scale</div>
+										<div class="company">Samar Haider*, Amir Tohidi*, Jenny S. Wang*, Timothy Dörr, David M Rothschild, Chris Callison-Burch, Duncan J Watts &mdash; <em>R&R at Science Advances</em></div>
+										<details class="abstract-details">
+											<summary>Abstract</summary>
+											<p>Mainstream news organizations shape public perception not only directly through the articles they publish but also through the choices they make about which topics to cover (or ignore) and how to frame the issues they do decide to cover. However, measuring these subtle forms of media bias at scale remains a challenge. Here, we introduce a large, ongoing (from January 1, 2024 to present), near real-time dataset and computational framework developed to enable systematic study of selection and framing bias in news coverage. Our pipeline integrates large language models (LLMs) with scalable, near-real-time news scraping to extract structured annotations&mdash;including political lean, tone, topics, article type, and major events&mdash;across hundreds of articles per day. We quantify these dimensions of coverage at multiple levels&mdash;the sentence level, the article level, and the publisher level&mdash;expanding the ways in which researchers can analyze media bias in the modern news landscape. In addition to a curated dataset, we also release an interactive web platform for convenient exploration of these data. Together, these contributions establish a reusable methodology for studying media bias at scale, providing empirical resources for future research. Leveraging the breadth of the corpus over time and across publishers, we also present some examples (focused on the 150,000+ articles examined in 2024) that illustrate how this novel data set can reveal insightful patterns in news coverage and bias, supporting academic research and real-world efforts to improve media accountability. </p>
+										</details>
+									</div>
+
 								</div>
 							</div>
-
-							<!-- experience -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="fa fa-briefcase"></i></div>
-									<div class="name">Experience</div>
-								</div>
-								<div class="resume-items">
-									<div class="resume-item border-line-h">
-										<div class="date">Aug. 2023 - Jul. 2024</div>
-										<div class="name">Pre-Doctoral Research Assistant</div>
-										<div class="company">Microsoft Research</div>
-										<!-- <p>
-											<ul>
-												<li>
-													• Investigated, fixed, and documented issues with the previously developed minimum viable product and Node.js backend.
-												</li>
-												<li>
-													• Developed the second-generation app while complying with design specifications. Responsible for all phases, including implementing, testing, and debugging.
-												</li>
-											</ul>
-										</p> -->
-									</div>
-								
-									<div class="resume-item border-line-h">
-										<div class="date">May 2022 - Aug 2022</div>
-										<div class="name">Software Engineer Intern</div>
-										<div class="company">Lyft</div>
-										<!-- <p>
-											<ul>
-												<li>
-													• Revamped a 3+ year old legacy experience for the "pre-ride dispatch" feature (frequently used by drivers for airport pickups).
-												</li>
-												<li>
-													• Established consistency between the pre-ride dispatch and standard rideshare flow, decreasing both driver distraction and tech debt accumulation.
-												</li>
-											</ul>
-										</p> -->
-									</div>
-
-									<div class="resume-item border-line-h">
-										<div class="date">Jul. 2020 - Jul. 2022</div>
-										<div class="name">Full Stack Developer Intern</div>
-										<div class="company">Root.AI (Start-Up)</div>
-										<!-- <p>
-											<ul>
-												<li>
-													• Investigated, fixed, and documented issues with the previously developed minimum viable product and Node.js backend.
-												</li>
-												<li>
-													• Developed the second-generation app while complying with design specifications. Responsible for all phases, including implementing, testing, and debugging.
-												</li>
-											</ul>
-										</p> -->
-									</div>
-									<div class="resume-item border-line-h">
-										<div class="date">Jun. 2021 - Aug. 2021</div>
-										<div class="name">Software Engineer Intern</div>
-										<div class="company">Lyft</div>
-										<!-- <p>
-											Driver App Platform Team
-										</p> -->
-										<!-- <p>
-											<ul>
-												<li>
-													• Built an upcoming feature from the ground up while implementing modern iOS patterns, such as declarative and reactive programming.
-												</li>
-												<li>
-													• Produced technical specification and handoff documentation for future iterations.
-												</li>
-											</ul>
-										</p> -->
-									</div>
-									
-									<div class="resume-item">
-										<div class="date"> Jun. 2020 - Aug. 2020</div>
-										<div class="name">C# Developer Intern</div>
-										<div class="company">Bristol Myers Squibb</div>
-										<!-- <p>
-											<ul>
-												<li>
-													• Designed, developed and deployed a C# thick-client application for a volume verification device which used ultrasonic technology to measure micro-sized well plates and tube racks.
-												</li>
-												<li>
-													• Through Scrum sprint cycles, independently built a user interface and DLL while ensuring optimal performance, improving volume measurement accuracy and repeatability by 30%.
-												</li>
-											</ul>
-										</p> -->
-									</div>
-								</div>
-							</div>
-
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="skills-list list">
-									<div class="skill-title border-line-h">
-										<div class="icon"><i class="fa fa-code"></i></div>
-										<div class="name">Languages</div>
-									</div>
-									<ul>
-										<li class="border-line-h">
-											<div class="name">Python</div>
-										</li>
-										<li class="border-line-h">
-											<div class="name">Javascript</div>									
-										</li>										
-										<li class="border-line-h">
-											<div class="name">R</div>											
-										</li>																			
-										<li class="border-line-h">
-											<div class="name">Stata</div>											
-										</li>
-										<li class="border-line-h">
-											<div class="name">SQL</div>											
-										</li>
-										<li class="border-line-h">
-											<div class="name">HTML/CSS</div>											
-										</li>
-										<li class="border-line-h">
-											<div class="name">LaTeX</div>											
-										</li>
-										<li class="border-line-h">
-											<div class="name">Swift</div>											
-										</li>
-									</ul>
-									
-									<!-- Spacer-->
-									<p></p>
-
-									<div class="skill-title border-line-h">
-										<div class="icon"><i class="fa fa-list"></i></div>
-										<div class="name">Technologies</div>
-									</div>
-									<ul>
-										<li class="border-line-h">
-											<div class="name">NumPy</div>
-										</li>
-										<li class="border-line-h">
-											<div class="name">Pandas</div>
-										</li>
-										<li class="border-line-h">
-											<div class="name">TensorFlow</div>
-										</li>
-										<li class="border-line-h">
-											<div class="name">PyTorch</div>
-										</li>
-										<li class="border-line-h">
-											<div class="name">Tidyverse</div>		
-										</li>																		
-										<li class="border-line-h">
-											<div class="name">React</div>									
-										</li>	
-										<li class="border-line-h">
-											<div class="name">Node.js</div>									
-										</li>										
-										<li class="border-line-h">
-											<div class="name">MySQL</div>											
-										</li>
-										<li class="border-line-h">
-											<div class="name">RxSwift</div>											
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<!-- education -->
-							<!-- <div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="fa fa-university"></i></div>
-									<div class="name">Education</div>
-								</div>
-								<div class="resume-items">
-									<div class="resume-item border-line-h ">
-										<div class="date">Aug. 2019 - May 2023</div>
-										<div class="name">Wellesley College</div>
-										<div class="company">Wellesley, Massachusetts</div>
-										<p>
-											B.A. in Computer Science, Economics
-										</p>
-									</div>
-									<div class="resume-item border-line-h ">
-										<div class="date">Sept. 2020 - May 2023</div>
-										<div class="name">Massachusetts Institute of Technology</div>
-										<div class="company">Cambridge, Massachusetts</div>
-										<p>
-											Cross-Registered Undergraduate Student
-										</p>
-									</div>
-									<div class="resume-item border-line-h">
-										<div class="date">Sept. 2021 - Dec. 2021</div>
-										<div class="name">Oxford University</div>
-										<div class="company">Oxford, UK</div>
-										<p>
-											Visiting Student in Computer Science at Worcester College
-										</p>
-									</div>							
-								</div> -->
-
-								<!-- Leadership (this solution is a bit hacky but it works... check for bugs) -->
-								<!-- <div class="resume-items">
-									<div class="name"> 
-										<p>
-											<br>
-											<br>
-										</p>
-									</div>
-								</div>
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="fa fa-users"></i></div>
-									<div class="name">Leadership</div>
-								</div>
-								<div class="resume-items">
-									<div class="resume-item border-line-h active">
-										<div class="date">Sep. 2022 - Present</div>
-										<div class="name">MIT-Gordon Engineering Leadership Program</div>
-										<div class="company">Cambridge, MA</div>
-										<p>
-											Bachelor's Degree in Computer Science, Economics
-										</p>
-									</div>
-									<div class="resume-item border-line-h active">
-										<div class="date">Jun. 2022 - Aug. 2022</div>
-										<div class="name">Lyft Intern Advisory Committee</div>
-										<div class="company">New York, NY</div>
-										<p>
-											Bachelor's Degree in Computer Science, Economics
-										</p>
-									</div>
-								</div> 
-							</div> -->
 							<div class="clear"></div>
 						</div>
+
 					</div>
 
-					
-
-					<!-- HIDE THESE FOR NOW B/C NOT NECESSARY-->
-
-
-					<!--
-						Skills
-					-->
-					<!-- <div class="content skills">
-						<div class="title">My Skills</div>
-						<div class="row">
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="skills-list circles">
-									<div class="skill-title border-line-h">
-										<div class="icon"><i class="fa fa-code"></i></div>
-										<div class="name">Coding</div>
-									</div>
-									<ul>
-										<li>
-											<div class="name">Swift</div>
-											<div class="progress p90">
-												<span>90%</span>
-											</div>
-										</li>
-										<li>
-											<div class="name">Python</div>
-											<div class="progress p85">
-												<span>85%</span>
-											</div>
-										</li>
-										<li>
-											<div class="name">Stata</div>
-											<div class="progress p70">
-												<span>70%</span>
-											</div>
-										</li>										
-										<li>
-											<div class="name">JavaScript</div>
-											<div class="progress p55">
-												<span>55%</span>
-											</div>
-										</li>
-										<li>
-											<div class="name">Java</div>
-											<div class="progress p65">
-												<span>65%</span>
-											</div>
-										</li>										
-										<li>
-											<div class="name">C</div>
-											<div class="progress p45">
-												<span>45%</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="clear"></div>
-						</div>
-					</div>  -->
 				</div>
 			</div>
 

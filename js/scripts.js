@@ -26,6 +26,7 @@ $(function () {
 
 	var width = $(window).width();
 	var height = $(window).height();
+	var _isPoppingState = false;
 
 
 	/*
@@ -152,6 +153,10 @@ $(function () {
 
 				$(card_item).removeClass('hidden');
 				$(card_item).addClass('active');
+
+				if (!_isPoppingState) {
+					history.pushState(null, null, id);
+				}
 			}
 		}
 		/* if mobile */
@@ -578,6 +583,34 @@ $(function () {
 		    $(this).html(newString);
 		} else {
 			$(this).html('<div class="first-letter">'+ $(this).html() + '</div>');
+		}
+	});
+
+
+	/*
+		Deep-link: activate tab from URL hash on page load
+	*/
+	var initHash = window.location.hash;
+	if (initHash) {
+		var $hashLink = $('.top-menu a[href="' + initHash + '"]');
+		if ($hashLink.length) {
+			_isPoppingState = true;
+			$hashLink.trigger('click');
+			_isPoppingState = false;
+		}
+	}
+
+	/*
+		Handle browser back/forward navigation
+	*/
+	$(window).on('popstate', function() {
+		var hash = window.location.hash;
+		var targetHash = hash || '#about';
+		var $popLink = $('.top-menu a[href="' + targetHash + '"]');
+		if ($popLink.length) {
+			_isPoppingState = true;
+			$popLink.trigger('click');
+			_isPoppingState = false;
 		}
 	});
 
